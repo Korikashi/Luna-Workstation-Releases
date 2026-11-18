@@ -6,7 +6,7 @@ Luna WorkStation is a free desktop application for Windows that runs several loc
 same computer and shows each one in its own tab, using the Remote Desktop control built into Windows. It can create
 the Windows accounts used by each desktop and automate what happens when a desktop connects.
 
-- **Current version:** 1.0.0
+- **Current version:** 1.0.1
 - **Platform:** Windows (64-bit)
 - **Website:** https://korikashi.github.io/Luna-Workstation-Releases/
   <!-- Replace with https://luna-workstation.korikashi.uk/ once the custom domain is active. -->
@@ -103,7 +103,7 @@ remoto locales en el mismo equipo y muestra cada una en su propia pestaña, con 
 integrado en Windows. Puede crear las cuentas de Windows que usa cada escritorio y automatizar lo que ocurre al
 conectarse.
 
-- **Versión actual:** 1.0.0 · **Plataforma:** Windows de 64 bits
+- **Versión actual:** 1.0.1 · **Plataforma:** Windows de 64 bits
 - **Descarga:** [LunaWorkstation-setup.exe](https://github.com/Korikashi/Luna-WorkStation-Releases/releases/latest/download/LunaWorkstation-setup.exe)
 - **Requisitos:** Windows de 64 bits, cuenta de administrador, componentes de Escritorio remoto de Windows; Luna se
   inicia desde una sesión local (no dentro de una sesión de Escritorio remoto) y solo admite una instancia por equipo.

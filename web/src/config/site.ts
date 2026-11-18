@@ -30,7 +30,7 @@ export const site = {
   developer: 'Korikashi',
 
   /** Current stable version shown on the site (manual). */
-  version: '1.0.0',
+  version: '1.0.1',
   platform: 'Windows (64-bit)',
 
   /** Official installer. Plain link to the latest Release asset: no API calls, no tokens. */
