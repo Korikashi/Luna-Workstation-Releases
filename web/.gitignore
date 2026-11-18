@@ -1,0 +1,71 @@
+# Luna WorkStation website — files that must not reach the public repository.
+# Note: .gitignore only controls what is committed. What GitHub Pages publishes is the build output (dist/),
+# which contains only index.html, the bundled assets and the contents of public/.
+
+# ── Dependencies and local tools ────────────────────────────────────────────────────────────────
+node_modules/
+# Portable Node.js, npm cache and other locally downloaded tools
+.tools/
+.npm/
+.npm-cache/
+npm-cache/
+node-v*/
+*.zip
+*.tgz
+
+# ── Build output and caches ────────────────────────────────────────────────────────────────────
+dist/
+dist-ssr/
+build/
+.vite/
+*.tsbuildinfo
+.eslintcache
+.cache/
+coverage/
+.nyc_output/
+
+# ── Logs, temporary and diagnostic files ──────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tmp
+*.temp
+*.bak
+*.orig
+*.swp
+*~
+*.sha256
+
+# ── Private environment and credentials ───────────────────────────────────────────────────────
+# .env and .env.domain are public build settings (base path and site URL for each GitHub Pages mode) and
+# MUST be committed. Local overrides and secrets are never committed.
+.env.local
+.env.*.local
+*.pem
+*.key
+*.pfx
+*.p12
+.npmrc
+.claude/
+.vscode/
+.idea/
+
+# ── Internal development documents ────────────────────────────────────────────────────────────
+# Analysis, verification and pending-work reports. docs/PUBLISHING.md stays (maintainers' guide).
+docs/CONTENT_SOURCES.md
+docs/PENDING.md
+docs/VERIFICATION.md
+docs/AUTOHOTKEY_REVIEW.md
+docs/PUBLISHING.md
+proposals/
+
+# Original screenshots (working files). The site uses the optimized copies in public/screenshots/, which ARE
+# committed. Keep the originals locally to regenerate them with scripts/optimize_screenshots.py.
+docs/Capturas/
+
+# ── OS files ──────────────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini

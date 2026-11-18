@@ -1,0 +1,78 @@
+/*
+ * Design tokens of Luna WorkStation, copied from the application:
+ *   - neutrals, lines, text and state: src/ui/theme/tokens.rs
+ *   - accent "Luna (pink)" #FEA1A9 and its derived states: src/ui/theme.rs (derive_palette) + src/logic/color.rs
+ * Every color is opaque: states are obtained by mixing colors, never with alpha. Border style: Sharp (Windows 10,
+ * radius 0).
+ */
+:root {
+  /* Surfaces (depth without shadows) */
+  --bg-app: #141418; /* BG_APP 20,20,24 */
+  --bg-chrome: #18181d; /* BG_CHROME 24,24,29 */
+  --surface: #1d1d22; /* SURFACE 29,29,34 */
+  --surface-raised: #222228; /* SURFACE_RAISED 34,34,40 */
+  --field: #28282f; /* FIELD 40,40,47 */
+  --control: #303037; /* CONTROL 48,48,55 */
+  --control-hover: #3a3a42; /* CONTROL_HOVER 58,58,66 */
+  --control-pressed: #43434c; /* CONTROL_PRESSED 67,67,76 */
+
+  /* Lines */
+  --separator: #2b2b32; /* SEPARATOR 43,43,50 */
+  --border: #36363f; /* BORDER 54,54,63 */
+  --border-strong: #494850; /* BORDER_STRONG 73,72,80 */
+
+  /* Text */
+  --text: #ececf1; /* TEXT 236,236,241 */
+  --text-secondary: #b2b1bc; /* TEXT_SECONDARY 178,177,188 */
+  --text-muted: #85848e; /* TEXT_MUTED 133,132,142 */
+  --text-disabled: #5c5c66; /* TEXT_DISABLED 92,92,102 */
+
+  /* State */
+  --success: #69d49a;
+  --warning: #f0ad4e;
+  --danger: #ea767a;
+  --warning-bg: #43372a; /* mix(SURFACE, WARNING, 0.18) */
+  --warning-border: #715734; /* mix(SURFACE, WARNING, 0.40) */
+
+  /* Accent: preset "luna" and derived palette */
+  --accent: #fea1a9; /* accent */
+  --accent-hover: #feb2b8; /* lighten(accent, 0.18) */
+  --accent-pressed: #d4888f; /* mix(accent, BG_APP, 0.18) */
+  --accent-light: #fecbd0; /* lighten(accent, 0.45) */
+  --on-accent: #1f1618; /* on_color(accent) */
+  --accent-subtle: #4b363c; /* mix(BG_CHROME, accent, 0.22) */
+  --accent-subtle-hover: #5d4147; /* mix(BG_CHROME, accent, 0.30) */
+  --accent-selection: #73525a; /* mix(FIELD, accent, 0.35) */
+  --accent-tone-bg: #46353a; /* mix(SURFACE, accent, 0.18) */
+  --accent-tone-border: #775258; /* mix(SURFACE, accent, 0.40) */
+
+  /* Spacing */
+  --xs: 4px;
+  --sm: 8px;
+  --md: 12px;
+  --lg: 16px;
+  --xl: 24px;
+  --xxl: 32px;
+
+  /* Sizes */
+  --control-h-sm: 24px;
+  --control-h: 30px;
+  --control-h-lg: 38px;
+  --stroke: 1px;
+  --accent-bar: 3px;
+  --radius: 0; /* Sharp, Windows 10 style */
+
+  /* Typography (system Segoe UI, as in the application) */
+  --font: 'Segoe UI', 'Segoe UI Variable Text', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Cascadia Mono', Consolas, 'Courier New', monospace;
+  --caption: 11px;
+  --small: 12px;
+  --body: 13px;
+  --body-strong: 14px;
+  --subtitle: 16px;
+  --title: 22px;
+  --display: 26px;
+
+  /* Motion */
+  --anim: 120ms;
+}

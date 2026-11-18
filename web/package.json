@@ -1,0 +1,29 @@
+{
+  "name": "luna-workstation-web",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Official landing page of Luna WorkStation (static site for GitHub Pages).",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "typecheck": "tsc -b",
+    "build": "tsc -b && vite build",
+    "build:domain": "tsc -b && vite build --mode domain",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.1",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.2",
+    "typescript": "~5.9.2",
+    "vite": "^7.1.5"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}

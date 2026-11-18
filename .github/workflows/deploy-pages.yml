@@ -1,0 +1,79 @@
+# Deploys the Luna WorkStation website to GitHub Pages.
+#
+# Location: `.github/workflows/deploy-pages.yml` at the ROOT of Korikashi/Luna-Workstation-Releases (GitHub only runs
+# workflows from the repository root). The website project lives in `web/` (see web/docs/PUBLISHING.md).
+#
+# Requirements:
+#   - Settings → Pages → Build and deployment → Source = "GitHub Actions".
+#   - No secrets are needed. The optional repository variable PAGES_BUILD_MODE selects the address:
+#       unset / `production` → https://korikashi.github.io/Luna-Workstation-Releases/ (web/.env)
+#       `domain`             → https://luna-workstation.korikashi.uk/ (web/.env.domain), only once the custom domain
+#                              is configured and verified in Settings → Pages.
+#
+# Only the build output (web/dist: index.html, bundled assets and web/public) is published.
+
+name: Deploy website to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'web/**'
+      - '.github/workflows/deploy-pages.yml'
+  workflow_dispatch:
+
+# Nothing by default; each job requests only what it needs.
+permissions: {}
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  WEB_DIR: web
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: ${{ env.WEB_DIR }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: ${{ env.WEB_DIR }}/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type check and build
+        run: npm run build -- --mode "${{ vars.PAGES_BUILD_MODE || 'production' }}"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.WEB_DIR }}/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
