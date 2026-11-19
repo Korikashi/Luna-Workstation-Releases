@@ -8,8 +8,7 @@ the Windows accounts used by each desktop and automate what happens when a deskt
 
 - **Current version:** 1.0.1
 - **Platform:** Windows (64-bit)
-- **Website:** https://korikashi.github.io/Luna-Workstation-Releases/
-  <!-- Replace with https://luna-workstation.korikashi.uk/ once the custom domain is active. -->
+- **Website:** https://luna-workstation.korikashi.uk/
 
 ## Download
 
