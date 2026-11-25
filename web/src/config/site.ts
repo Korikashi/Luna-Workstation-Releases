@@ -30,7 +30,7 @@ export const site = {
   developer: 'Korikashi',
 
   /** Current stable version shown on the site (manual). */
-  version: '1.0.2',
+  version: '1.0.3',
   platform: 'Windows (64-bit)',
 
   /** Official installer. Plain link to the latest Release asset: no API calls, no tokens. */
@@ -48,7 +48,7 @@ export const site = {
     'a single window, with Windows account management and per-desktop automation.',
 
   /**
-   * Official screenshots of Luna WorkStation 1.0.2 (originals in docs/Capturas, web versions generated with
+   * Official screenshots of Luna WorkStation 1.0.3 (originals in docs/Capturas, web versions generated with
    * scripts/optimize_screenshots.py). The first one is also used in the Hero. If the list is empty, the Hero shows
    * the official icon and the gallery shows a neutral notice.
    */
